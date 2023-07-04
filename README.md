@@ -25,7 +25,7 @@
 
 ## ✨ 프로젝트 기능
 1. 젤리 정보 
-: 젤리에 대한 기본 정보와 맛과 식감에 대한 점수, 다른 사람들이 남긴 젤리 평점을 확인해 젤리 선택에 도움을 줍니다.
+: 젤리에 대한 영양정보와 맛과 식감에 대한 점수, 다른 사람들이 남긴 젤리 평점을 확인해 젤리 선택에 도움을 줍니다.
 
 2. 젤비티아이
 : 나와 성향이 가장 비슷한 곰 젤리는 무엇일까 확인하고, 나와 비슷한 유형의 사람들은 어떤 젤리를 선호하는지 알 수 있습니다.
@@ -52,7 +52,7 @@ https://www.figma.com/file/BirIA9SMcNDdzDCB2IDUsj/HARIBO_DESIGN?type=design&node
         <td>기본 사용언어</td>
         <td>
             <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=Java&logoColor=white"/>
-          <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
+            <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
         </td>
     </tr>
     <tr>
@@ -69,14 +69,14 @@ https://www.figma.com/file/BirIA9SMcNDdzDCB2IDUsj/HARIBO_DESIGN?type=design&node
         <td>
            <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=white"/> 
            <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=for-the-badge&logo=Spring Boot&logoColor=white"/>
-           <img src="https://img.shields.io/badge/Spring Security-6DB33F?style=for-the-badge&logo=Spring Security&logoColor=white"/> 
+           <img src="https://img.shields.io/badge/hibernate-59666C?style=for-the-badge&logo=hibernate&logoColor=white">
         </td>
     </tr>
      <tr>
-        <td>라이브러리</td>
+        <td>API</td>
         <td>
             <img src="https://img.shields.io/badge/Kakao-FFCD00?style=for-the-badge&logo=Kakao&logoColor=white"/>
-            <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=Socket.io&logoColor=white"/>
+            <img src="https://img.shields.io/badge/Naver-03C75A?style=for-the-badge&logo=Naver&logoColor=white"/>
         </td>
     </tr>
     <tr>
