@@ -26,20 +26,27 @@ https://www.figma.com/file/BirIA9SMcNDdzDCB2IDUsj/HARIBO_DESIGN?type=design&node
 ## 🐻 화면구성
 ### 시작화면
 <img width="1024" alt="JELL-BTI" src="https://github.com/kimpizza/Jell-BTI_Project/assets/83896466/98885bc4-d727-4904-81f3-acf3e4cf69b5">
+
 ### 메인화면
 <img width="1275" alt="스크린샷 2023-07-28 오전 12 09 17" src="https://github.com/kimpizza/Jell-BTI_Project/assets/108074336/8beff271-877b-4028-92ab-96b68e70ff1b">
+
 ### 로그인 화면
 <img width="1268" alt="스크린샷 2023-07-28 오전 12 11 22" src="https://github.com/kimpizza/Jell-BTI_Project/assets/108074336/3a5a3209-58b7-4414-bed4-b89edc81e51f">
+
 ### 젤리 리뷰 화면
 <img width="1280" alt="스크린샷 2023-07-28 오전 12 10 37" src="https://github.com/kimpizza/Jell-BTI_Project/assets/108074336/9cfa535e-491b-4db4-986e-14c8aca577e4">
+
 ### 젤리 리뷰 작성
 <img width="1274" alt="스크린샷 2023-07-28 오전 12 11 13" src="https://github.com/kimpizza/Jell-BTI_Project/assets/108074336/94234dfb-6840-4b21-90ed-bb6e494cc736">
+
 ### jelly MBTI 테스트
 <img width="1273" alt="스크린샷 2023-07-28 오전 12 11 43" src="https://github.com/kimpizza/Jell-BTI_Project/assets/108074336/f50834db-669f-4237-ae76-d2780bd2c7f7">
 <img width="1271" alt="스크린샷 2023-07-28 오전 12 24 21" src="https://github.com/kimpizza/Jell-BTI_Project/assets/108074336/1add3dc7-a345-4b79-9916-fd41512fdbba">
+
 ### 젤리 커뮤니티
 <img width="1272" alt="스크린샷 2023-07-28 오전 12 29 28" src="https://github.com/kimpizza/Jell-BTI_Project/assets/108074336/f086211b-5f62-4644-a7e3-625ca48d32df">
 <img width="1272" alt="스크린샷 2023-07-28 오전 12 29 28" src="https://github.com/kimpizza/Jell-BTI_Project/assets/108074336/0dea25fb-d47d-40ff-adb7-964383690fb7">
+
 ### 마이페이지
 <img width="1275" alt="스크린샷 2023-07-28 오전 12 11 28" src="https://github.com/kimpizza/Jell-BTI_Project/assets/108074336/5d732d17-8b3b-47a3-b231-03be54725b9b">
 <img width="1269" alt="스크린샷 2023-07-28 오전 12 29 42" src="https://github.com/kimpizza/Jell-BTI_Project/assets/108074336/2a6d33d7-c8b6-41c0-bc66-af1d68c58a2f">
