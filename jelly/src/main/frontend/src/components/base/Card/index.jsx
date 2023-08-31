@@ -68,7 +68,7 @@ export default function Card({ productList }) {
               alignItems: "center"
             }}>
               <ImgBox>
-                <Img src = {v.imageUrl} width={200} height={280} />              
+                <Img src = {v.imageUrl} width={17} height={24} />              
                 <CardContent>
                   <JellyTitle>{v.jname}</JellyTitle>
                   <Button onClick={()=>navigate(`/home/goodsModal/${v.jidx}`)} fontSize={20} bgColor={"#16f916"} padding={"2px 10px"}>상세보기</Button>

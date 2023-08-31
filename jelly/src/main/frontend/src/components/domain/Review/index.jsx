@@ -7,6 +7,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import useAxios from "hooks/useAxios";
+import useAuth from "hooks/useAuth";
 
 const Form = styled.form`
   display: flex;
@@ -15,8 +16,8 @@ const Form = styled.form`
 `;
 
 const TextArea = styled.textarea`
-  width: 370px;
-  height: 270px;
+  width: 30vw;
+  height: 20vw;
   background: #d9d9d9;
   border-radius: 30px;
   border: 0;
@@ -58,11 +59,13 @@ const Stars = styled.div`
 `
 
 const Review = () => {
-  const [inputValue, handleChange] = useInput("");
+  const [inputValue, setInputValue, handleChange] = useInput("");
   const [count, setCount] = useState(0);
   const {id} = useParams();
   const userData = useSelector((state)=>state.userInformation);
   const navigate = useNavigate()
+
+  useAuth(`/home/goodsModal/${id}/review`)
 
   const ReviewHandler = (e)=>{
     e.preventDefault();
@@ -78,6 +81,7 @@ const Review = () => {
           "mEmail": userData.mEmail
         }
     }).then((response) => {
+      console.log(response)
       alert("후기가 작성되었습니다.")
       navigate("/mypage/reviewlist")
     }).catch((err)=>{
@@ -88,7 +92,7 @@ const Review = () => {
   return (
     <>
       <Form onSubmit={ReviewHandler}>
-        <h1 style={{fontSize:"40px",marginBottom:"20px", marginTop:"-40px"}}>별점을 입력해주세요!</h1>
+        <h1 style={{fontSize:"3.7vw",marginBottom:"20px", marginTop:"-40px"}}>별점을 입력해주세요!</h1>
         <StarRating setCount={setCount} /> 
         <TextArea
          type="text"

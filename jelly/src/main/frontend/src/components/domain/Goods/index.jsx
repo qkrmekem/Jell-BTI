@@ -64,13 +64,10 @@ const Goods = () => {
     url: `/jellies/rates/email/magicofclown-naver.com`,
   });
 
-  console.log(response)
-
   const a = response?.sort(
     (a, b) => new Date(b.insertDate) - new Date(a.insertDate)
   );
 
-  console.log(a);
 
   return (
     <>

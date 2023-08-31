@@ -1,6 +1,7 @@
 import Button from "components/base/Button";
 import Img from "components/base/Img";
 import Modal from "components/base/Modal";
+import useAuth from "hooks/useAuth";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -27,8 +28,8 @@ const SubTitle = styled(Title)`
 `
 
 const Name = styled.h2`
-font-size: 1.8vw;
-text-align: center;
+    font-size: 1.8vw;
+    text-align: center;
 `
 
 const ProductList = ()=>{
@@ -48,12 +49,12 @@ const ProductList = ()=>{
                 {
                     data.jellyInfo.status === "complete" ? data.jellyInfo.value.map((v)=>{
                         return (
-                            <Button key={v.jidx} bgColor={"transparent"} onClick={()=>navigate(`/home/goodsModal/${v.jidx}/review`)}>
-                                <Img key={v.jidx} src={v.imageUrl} width={"10vw"} padding={5} cursor={"pointer"} />
+                            <Button key={v.jidx} margin={"0 4px"} bgColor={"transparent"} onClick={()=>navigate(`/home/goodsModal/${v.jidx}/review`)}>
+                                <Img key={v.jidx} src={v.imageUrl} width={10} padding={5} cursor={"pointer"} />
                                 <Name>{v.jname.slice(4)}</Name>
                             </Button>
                         )
-                    }) : "로딩중입니다..."
+                    }) : <SubTitle>로딩중입니다...</SubTitle>
                 }
             </Container>
             <SubTitle>클릭해주세요~!</SubTitle>

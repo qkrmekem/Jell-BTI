@@ -15,9 +15,11 @@ let userInformation = createSlice({
 
 export let { userInformationIn } = userInformation.actions;
 
+//작성한 젤리 후기 정보 전연관리
+
 export default configureStore({
     reducer : {
         userInformation : userInformation.reducer,
-        jellyInfo : jellyInfoSlice.reducer
+        jellyInfo : jellyInfoSlice.reducer,
     }
 })

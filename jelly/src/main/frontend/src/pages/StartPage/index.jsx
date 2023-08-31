@@ -48,12 +48,12 @@ const StartPage = ()=>{
     return(
         <Container>
             <HariboBox>
-                <Img src="./haribo.png" width={321} height={325} />
-                <Logo fontSize={200} />
+                <Img src="./haribo.png" width={26} height={26} />
+                <Logo fontSize={17} />
                 <SubTitle>HARIBO</SubTitle>
             </HariboBox>
             <KakaoBox>
-                <Img src="./kakaoBackground.png" width={640} height={1080}/>
+                <Img src="./kakaoBackground.png" width={53} height={61}/>
                 <BallonThird />
                     <Button fontSize={70} fontWeight={600} padding={"0px 44px"} bgColor={"#16f916"} onClick={()=>navigate("/home")}>Jell-BTI 시작하기</Button>
                 <Ballon />

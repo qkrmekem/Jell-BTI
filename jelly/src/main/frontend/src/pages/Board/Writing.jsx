@@ -4,8 +4,10 @@ import Styled from "styled-components";
 import Header from "../../components/domain/Header";
 import Navigation from "../../components/domain/Nav";
 import { useNavigate } from "react-router-dom";
+import useAuth from "hooks/useAuth";
 
 const Writing = () => {
+    useAuth("/writing")
     const navigate = useNavigate();
     const handleButtonClick = () => {
         navigate("/board");

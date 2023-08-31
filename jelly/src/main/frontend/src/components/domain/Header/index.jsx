@@ -13,8 +13,8 @@ const Container = styled.div`
 const Header = ()=>{
     return(
         <Container>
-            <Img src="/haribo.png" width={190} height={180} marginRight={60} />
-            <Logo fontSize={180} />
+            <Img src="/haribo.png" width={17} height={17} marginRight={60} />
+            <Logo fontSize={16} />
         </Container>
     )
 }

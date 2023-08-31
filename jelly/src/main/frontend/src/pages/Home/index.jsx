@@ -2,7 +2,7 @@ import Header from "@/components/domain/Header";
 import Search from "@/components/domain/Search";
 import SearchBox from "components/domain/SearchBox";
 import styled from "styled-components";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { asyncUpFetch } from "redux/jellyInfo";
 import { useEffect } from "react";
 import {
@@ -42,7 +42,6 @@ const Home = () => {
       method : "GET",
       url : `/oauth/login/userInfo?token=${token}`
   }).then((res)=>{
-      // setUser(res.data.userInfo);
       dispatch(userInformationIn(res.data.userInfo));
       const userEmail = res.data.userInfo.mEmail;
   })
@@ -50,7 +49,6 @@ const Home = () => {
     console.log("로그인을 하지 않았습니다.")
   }
   
-
   useEffect(() => {
     dispatch(asyncUpFetch());
   }, []);

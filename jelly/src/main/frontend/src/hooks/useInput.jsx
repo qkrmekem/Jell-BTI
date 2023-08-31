@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export function useInput(initialValue){
-    const [inputValue, setInputValue] = useState(initialValue);
+export function useInput(){
+    const [inputValue, setInputValue] = useState("");
     const [boolean, setBoolean] = useState(true);
     const navigate = useNavigate()
 
@@ -15,7 +15,6 @@ export function useInput(initialValue){
     const handleChange = (e) =>{
         setInputValue(e.target.value);
         setBoolean(false);
-        // console.log(e.target.value)
     };
 
 
@@ -27,5 +26,5 @@ export function useInput(initialValue){
         navigate(`/home/?jellyName=${keyword}`)
     }
 
-    return [inputValue, handleChange, boolean, handleSubmit];
+    return [inputValue, setInputValue, handleChange, boolean, handleSubmit];
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Rate from "../../base/Rate";
 
-const Rating = ({setCount}) => {
+const StarRating = ({setCount}) => {
   const [rating, setRating] = useState(0);
   
   useEffect(()=>{
@@ -19,4 +19,4 @@ const Rating = ({setCount}) => {
   );
 };
 
-export default Rating;
+export default StarRating;

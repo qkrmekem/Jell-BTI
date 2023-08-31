@@ -35,10 +35,10 @@ public class NaverController {
     private String clientId;
 
     @RequestMapping("/oauth2/authorization/naver")
-    public Map<String, String> login(@RequestParam(value = "code")String code, HttpSession session)throws Exception {
+    public Map<String, String> login(@RequestParam(value = "code") String code, HttpSession session) throws Exception {
         System.out.println("네이버 로그인 안녕하세요");
         log.info("code ={}", code);
-        String accecc_token = naverService.getToken(code,session);
+        String accecc_token = naverService.getToken(code, session);
         Map<String, String> map = new HashMap<>();
         map.put("token", accecc_token);
         return map;
@@ -46,9 +46,8 @@ public class NaverController {
 
     @RequestMapping("/oauth/login/naver/userInfo")
     public Map<String, Object> userInfo(
-            @RequestParam(value = "token",required = false) String token,
-            HttpServletRequest request
-    ) throws Exception {
+            @RequestParam(value = "token", required = false) String token,
+            HttpServletRequest request) throws Exception {
         Member userInfo = naverService.getUserInfo(token);
         Map<String, Object> map = new HashMap<>();
 
@@ -59,7 +58,7 @@ public class NaverController {
             session.setAttribute("userInfo", userInfo);
             map.put("userInfo", userInfo);
 
-            //로그인 성공 확인용
+            // 로그인 성공 확인용
             log.info("로그인 성공!!!, userinfo={}", userInfo);
             return map;
         }
@@ -67,5 +66,5 @@ public class NaverController {
 
         return map;
     }
-    
+
 }

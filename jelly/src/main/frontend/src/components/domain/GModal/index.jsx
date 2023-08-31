@@ -57,10 +57,9 @@ const Content = styled.div`
 
 const Title = styled.div`
   font-size: 6.5vw;
-  margin-top: 60px;
   text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
-  margin: 30px auto;
-  width: 380px;
+  margin: 50px auto;
+  width: 35vw;
   text-align: center;
 `;
 
@@ -86,7 +85,7 @@ const GModal = () => {
       <ModalSection>
         <Content>
           <ImgBox>
-            <Img src={value.imageUrl} width={"26vw"} />
+            <Img src={value.imageUrl} width={26} />
           </ImgBox>
           <Title>{value.jname}</Title>
           <Outlet />

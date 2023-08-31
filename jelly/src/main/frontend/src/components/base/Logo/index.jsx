@@ -1,14 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const LogoImage = styled.img.attrs({ alt : 'logo' })`
     width:250px;
 `
-const Title = styled.h1`
-  font: ${({fontSize})=>`${fontSize}px`}/0.65 "Dongle", "Kaushan Script", Futura, "Roboto", "Trebuchet MS", Helvetica, sans-serif;
+const Title = styled.button`
+  font: ${({fontSize})=>`${fontSize}vw`}/0.65 "Dongle", "Kaushan Script", Futura, "Roboto", "Trebuchet MS", Helvetica, sans-serif;
+  border : 0;
+  background : transparent;
+  cursor: pointer;
 
 .stage {
-  height: 200px;
-  width: 300px;
+  height: 15vw;
+  width: 25vw;
   margin: auto;
   perspective: 9999px;
   transform-style: preserve-3d;

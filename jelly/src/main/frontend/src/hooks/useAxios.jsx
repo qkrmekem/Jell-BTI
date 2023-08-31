@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const useAxios = ({ url, method, body = null, headers = null })=>{
+const useAxios = ({ url, method, body = null, headers = null, render })=>{
     const [response, setResponse] = useState(null);
     const [error, setError] = useState('');
     const [loading, setloading] = useState(true);
@@ -19,7 +19,7 @@ const useAxios = ({ url, method, body = null, headers = null })=>{
 
     useEffect(()=>{
         fetchData();
-    },[method, url, body, headers]);
+    },[method, url, body, headers, render]);
 
     return { response, error, loading };
 }

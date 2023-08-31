@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../Button';
 import Img from '../Img';
@@ -26,6 +26,7 @@ const ModalSection = styled.section`
     background: #F7FEF7;
     border-radius: 50px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow-y: auto;
 `
 
 const ModalButton = styled.button`

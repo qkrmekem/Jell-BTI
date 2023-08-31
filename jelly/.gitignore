@@ -6,7 +6,7 @@ build/
 !**/src/test/**/build/
 
 ### STS ###
-.apt_generated
+.apt_genera$ted
 .classpath
 .factorypath
 .project

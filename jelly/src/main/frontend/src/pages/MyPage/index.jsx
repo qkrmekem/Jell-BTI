@@ -3,9 +3,11 @@ import { BalloonBlue, BalloonGreen, BalloonRed, BalloonSkyblue, UpDownAnimation 
 import Button from "components/base/Button";
 import Logo from "components/base/Logo";
 import { Circle, Content } from "components/domain/SearchBox";
+import useAuth from "hooks/useAuth";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Outlet, useNavigate } from "react-router-dom";
+import { asyncUpFetch } from "redux/jellyInfo";
 import { userInformationIn } from "redux/store";
 import styled from "styled-components";
 
@@ -142,18 +144,29 @@ const HariboNoise = styled(Circle)`
 `
 
 const MyPage = ()=>{
+    // useAuth("/mypage")
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(asyncUpFetch());
+    }, []);
 
     const user = useSelector((state)=> state)
+
+    console.log(user)
+
     let token = localStorage.getItem("token")
+    let name = localStorage.getItem("name")
 
     useEffect(()=>{
         axios({
             method : "GET",
             url : `/oauth/login/userInfo?token=${token}`
         }).then((res)=>{
-            console.log(res.data.userInfo)
-            userInformationIn(res.data.userInfo)
+            console.log(res.data.userInfo);
+            localStorage.setItem("user",res.data.userInfo.mEmail)
+            localStorage.setItem("name",res.data.userInfo.mNick)
         })
     },[])
     
@@ -169,9 +182,9 @@ const MyPage = ()=>{
             <MyPageBallonSkyblue src="/ballonSkyblue.png" />
             <MyPageBallonSkyblue_2 src="/ballonSkyblue.png" />
             <LogoBox onClick={()=>navigate("/home")} >
-                <Logo fontSize={150} marginLeft="70px" />
+                <Logo fontSize={15} marginLeft="70px" />
             </LogoBox>
-            <PageTitle>마이페이지</PageTitle>
+            <PageTitle><span style={{fontSize:"6vw"}}>{name ? name :"하리보"}</span>님의<br />마이페이지</PageTitle>
             <ProfileImage>
                 <HariboProfileContent />
                 <HariboLeftEar />
@@ -184,7 +197,7 @@ const MyPage = ()=>{
                 <Button onClick={()=>navigate("/board")} fontSize={40} fontWeight={700} padding={"0.5em 0.7em"} margin={"0em 0.5em"} bgColor={"#F7FEF7"} width={"175px"}>내가 작성한<br /> 커뮤니티</Button>
                 <Button onClick={()=>navigate("/practice")} fontSize={40} fontWeight={700} padding={"0.5em 0.7em"} margin={"0em 0.5em"} bgColor={"#F7FEF7"} width={"175px"}>젤리 테스트<br /> 시작하기</Button>
                 <Button onClick={()=>navigate("productlist")} fontSize={40} fontWeight={700} padding={"0.5em 0.7em"} margin={"0em 0.5em"} bgColor={"#F7FEF7"} width={"175px"}>젤리 후기<br /> 작성하기</Button>
-                <Button onClick={()=>navigate("writingreview")} fontSize={40} fontWeight={700} padding={"0.5em 0.7em"} margin={"0em 0.5em"} bgColor={"#F7FEF7"} width={"175px"}>내가 작성한<br /> 젤리 후기</Button>
+                <Button onClick={()=>navigate("reviewlist")} fontSize={40} fontWeight={700} padding={"0.5em 0.7em"} margin={"0em 0.5em"} bgColor={"#F7FEF7"} width={"175px"}>내가 작성한<br /> 젤리 후기</Button>
             </ButtonBox>
             <Outlet />
         </>

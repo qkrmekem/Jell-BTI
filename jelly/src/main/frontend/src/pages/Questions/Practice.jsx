@@ -4,8 +4,13 @@ import Navigation from "components/domain/Nav"
 import { useState } from "react"
 import styled from "styled-components"
 import axios from "axios"
+import useAuth from "hooks/useAuth"
+import { MyPageBallonBlue, MyPageBallonGreen, MyPageBallonGreen_2, MyPageBallonRed, MyPageBallonRed_2, MyPageBallonSkyblue_2 } from "pages/MyPage";
+import { Navigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 const Practice = () => {
+    const navigate = useNavigate();
 
     const questionList = [
         {
@@ -72,8 +77,8 @@ const Practice = () => {
             { type: 'J', text: '몇 명이 오려나?? 젤리는 이 정도면 되겠지' }]
         },
         {
-            q: ['테스트가 모두 끝났습니다. 결과 보러 가기'],
-            a: [{ type: '', text: '결과 보러 가기' }]
+            q: ['테스트가 모두 끝났습니다.'],
+            a: [{ type: '', text: '결과 보러 가기' }],
         }
 
     ]
@@ -100,8 +105,15 @@ const Practice = () => {
         } else {
             console.log("테스트 종료");
             setMbti();
+            goToResult(); // 결과 보기 페이지로 이동하는 함수 호출
         }
     };
+
+    const goToResult = () => {
+        console.log("결과 보러 가기");
+        navigate("/result");
+    };
+    //이동
 
     const setMbti = () => {
         let EorI =
@@ -146,30 +158,32 @@ const Practice = () => {
             <Header />
             <Navigation />
             <Topic>질문</Topic>
-            {page < questionList.length ? (
+            <div>
+                <QuestButton>{questionList[page].q}</QuestButton>
                 <div>
-                    <QuestButton>{questionList[page].q}</QuestButton>
-                    <div>
-                        {questionList[page].a.map((answer, index) => (
-                            <Answer key={index}>
-                                <AnswerButton onClick={() => handleAnswer(answer.type)}>
-                                    {answer.text}
-                                </AnswerButton>
-                            </Answer>
-                        ))}
-                    </div>
-                    <Page>{`페이지: ${page + 1} / ${questionList.length}`}</Page>
+                    {questionList[page].a.map((answer, index) => (
+                        <Answer key={index}>
+                            <AnswerButton onClick={() => handleAnswer(answer.type)}>
+                                {answer.text}
+                            </AnswerButton>
+                        </Answer>
+                    ))}
                 </div>
-            ) : (
-                <div>
-                    테스트가 모두 끝났습니다. 결과 보러 가기
-                </div>
-            )}
+                <Page>{`페이지: ${page + 1} / ${questionList.length}`}</Page>
+            </div>
+            <MyPageBallonBlue src="/balloonBlue.png" />
+            <MyPageBallonRed src="/balloonRed.png" />
+            <MyPageBallonRed_2 src="/balloonRed.png" />
+            <MyPageBallonGreen src="/balloonGreen.png" />
+            <MyPageBallonGreen_2 src="/balloonGreen.png" />
+            <MyPageBallonSkyblue_2 src="/ballonSkyblue.png" />
         </>
     );
 }
 
 export default Practice;
+
+
 
 const Topic = styled.div`
     width: 100%;
@@ -183,13 +197,13 @@ const Topic = styled.div`
 const QuestButton = styled.div`
     width: 30%;
     height: 10rem;
-    font-size: 3rem;
-    border: 2px solid black;
+    font-size: 4rem;
+    /* border: 2px solid black; */
     border-radius: 2rem;
     margin: 0 auto;
     margin-top: 3rem;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     text-align: center;
 `
@@ -202,6 +216,8 @@ const Bind = styled.div`
 const Answer = styled.div`
     display: flex;
     flex-direction: row;
+    text-align: center;
+    justify-content: center;
 `
 
 const AnswerButton = styled.button`
@@ -210,6 +226,7 @@ const AnswerButton = styled.button`
     font-size: 3rem;
     border: 2px solid black;
     border-radius: 2rem;
+    margin: 0 auto;
     margin-top: 5rem;
     display: flex; /* 수정: 기본 값인 'row' 대신 'flex'로 설정 */
     justify-content: center;
@@ -222,7 +239,7 @@ const Page = styled.div`
     width: 50%;
     height: 5rem;
     font-size: 3rem;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -230,3 +247,4 @@ const Page = styled.div`
     margin-top: 3rem;
     margin-bottom: 3rem;
 `;
+

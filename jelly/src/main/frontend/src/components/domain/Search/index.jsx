@@ -14,9 +14,13 @@ const Input = styled.input`
   border-bottom-left-radius: 40px;
   font-weight: 700;
   width: 412px;
-  font-size: 23px;
+  font-size: 30px;
   padding: 4px 35px;
   z-index: 99;
+  box-shadow: 0px 0px 10px #c8c6c6;
+  :focus{
+    outline : none;
+  }
 `;
 
 const Button = styled.button`
@@ -24,14 +28,19 @@ const Button = styled.button`
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
   z-index: 1;
-  font-size: 23px;
+  font-weight: 900;
+  font-size: 30px;
   padding: 6px 16px;
   border: 0;
   cursor: pointer;
+  box-shadow: 0px 0px 7px #c8c6c6;
+  &:hover{
+    background-color: rgba(0, 163, 255, 0.4);
+  }
 `;
 
 const Search = () => {
-  const [inputValue, handleChange, boolean, handleSubmit] = useInput("");
+  const [inputValue, setInputValue, handleChange, boolean, handleSubmit] = useInput("");
   return (
     <Container>
       <form onSubmit={handleSubmit}>
